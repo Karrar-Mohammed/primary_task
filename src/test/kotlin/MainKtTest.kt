@@ -15,6 +15,16 @@ internal class MainKtTest {
     }
 
     @Test
+    fun should_returnPercentageOfA_whenCorrectListGiven2() {
+        //given
+        val list = listOf("a", "a", "b")
+        //when
+        val result = calculatePercentageOfCharacterAInList(list)
+        //then
+        assertEquals(66.7, result)
+    }
+
+    @Test
     fun should_returnPercentageOfA_whenAComeInTheEndOfTheList() {
         //given
         val list = listOf("b", "b", "b", "a")

@@ -7,23 +7,18 @@ fun main() {
 fun calculatePercentageOfCharacterAInList(list: List<String>): Double {
 
     var characterACounter = 0
-    var isValid = true
 
-    return if (list.isNotEmpty()) {
+    if (list.isEmpty()) { return -1.0 }
 
         list.forEach {
             if (it != "a" && it != "b") {
-                isValid = false
+                return -1.0
             } else if (it == "a") {
                 characterACounter++
             }
         }
 
-        if (isValid) {
-            (characterACounter.toDouble() / list.size * 100).roundTo1Digit()
-        } else -1.0
-
-    } else -1.0
+         return (characterACounter.toDouble() / list.size * 100).roundTo1Digit()
 
 }
 
